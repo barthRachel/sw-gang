@@ -1,0 +1,429 @@
+/** Style général - Commun à toutes les pages **/
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+}
+
+/* Barre de navigation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: -1px;
+    background-color: black;
+    z-index: 3;
+}
+
+.logoImg {
+    height: 75px;
+    margin-left: 30px;
+}
+
+.navigateurMenuDesktop, .navigateurMenuOthers {
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+    background-color: black;
+}
+
+.navigateurMenuDesktop .menu, .navigateurMenuOthers .menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.navigateurMenuDesktop .menu a, .navigateurMenuOthers .menu a {
+    display: block;
+    text-decoration: none;
+    color: whitesmoke;
+    min-width: 120px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+
+    border: 2px solid transparent;
+}
+
+.navigateurMenuDesktop > .menu > a > li, .navigateurMenuOthers > .menu > a > li {
+    list-style: none;
+}
+
+.sousMenu {
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.sousMenu a {
+    color: whitesmoke;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#regimentClick:hover{
+    cursor: pointer;
+}
+
+.sousMenu a li {
+ list-style: none;
+}
+
+.navigateurMenuOthers {
+    display: none;
+}
+
+.navigateurMenuDesktop {
+    display: block;
+}
+
+@media (max-width: 1439px) {
+    .navigateurMenuDesktop {
+        display: none;
+    }
+
+    .navigateurMenuOthers {
+        display: block;
+    }
+}
+
+/* Section Vidéo */
+.sectionVideo{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+
+/* Bloc images */
+.sectionImg {
+    display : flex;
+    flex-direction : row;
+    justify-content: center;
+}
+
+.sectionPe {
+    width : 50%;
+    display: flex;
+    background-color: black;
+}
+
+.sectionPe video {
+    width : 50%;
+    display: flex;
+    background-color: black;
+    text-align: center;
+}
+.sectionPe img {
+    width : 100%;
+    height: 100%;
+    object-fit:inherit;
+}
+
+.sectionPe p {
+    float: right;
+    width: 98%;
+    text-align: center;
+    font-style: italic;
+    text-indent: 0;
+    border: thin silver;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    padding: 0.5em;
+    background-color: black;
+    color: white; 
+}
+
+/**********************************************************************/
+/** Style Home **/
+/*Style du réacteur au complet en partant du plus extérieur au plus intérieur*/
+.reactor-container {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border: 1px dashed rgb(0, 0, 0);
+    position: relative;
+    border-radius: 50%;
+    background-color: #000000;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 32px 8px rgb(0, 0, 0), 0px 0px 4px 1px rgb(0, 0, 0) inset;
+    margin-bottom: 5%;
+    margin-top: 1%;
+}
+
+.reactor-container-inner {
+    height: 238px;
+    width: 238px;
+    background-color: rgb(0, 0, 0);;
+    box-shadow: 0px 0px 4px 1px #ffee00;
+}
+
+.tunnel {
+    width: 220px;
+    height: 220px;
+    background-color: #000000;
+    box-shadow: 0px 0px 5px 1px #000000, 0px 0px 5px 4px #000000 inset;
+}
+
+.core-wrapper {
+    width: 180px;
+    height: 180px;
+    background-color: #000000;
+    box-shadow: 0px 0px 5px 4px #ffee00, 0px 0px 6px 2px #ffee00 inset;
+}
+
+.core-outer {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ffee00;
+    background-color: #ffee00;
+    box-shadow: 0px 0px 2px 1px #ffee00, 0px 0px 10px 5px #ffee00 inset;
+}
+
+.core-inner {
+    width: 70px;
+    height: 70px;
+    border: 5px solid #000000;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 7px 5px #ffee00, 0px 0px 10px 10px #ffee00 inset;
+}
+
+.coil-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: 3s infinite linear reactor-anim; /*Appelle l'animation reactor-anim qui fait tourner le réacteur sur lui-même => 3s pour faire un tour complet*/
+}
+
+.coil { /*Donne la forme et le positionnement global des bobines*/
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    top: calc(50% - 110px);
+    left: calc(50% - 15px);
+    transform-origin: 15px 110px;
+    background-color:#000000;
+    box-shadow: 0px 0px 5px #ffee00 inset;
+}
+
+/* .coil-1 => .coil-8 permet de placer les bobines sur le deuxième cercle de manière respectives*/
+.coil-1 {
+    transform: rotate(0deg);
+}
+.coil-2 {
+    transform: rotate(45deg);
+}
+.coil-3 {
+    transform: rotate(90deg);
+}
+.coil-4 {
+    transform: rotate(135deg);
+}
+.coil-5 {
+    transform: rotate(180deg);
+}
+.coil-6 {
+    transform: rotate(225deg);
+}
+.coil-7 {
+    transform: rotate(270deg);
+}
+.coil-8 {
+    transform: rotate(315deg);
+}
+/*Style des classes communes aux éléments du réacteur*/
+.circle {
+    border-radius: 50%;
+}
+
+.abs-center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+@keyframes reactor-anim { /*Animation qui fait tourner l'objet sur lui-même*/
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sectionHome h2 {
+    font-size: 3em;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    width: 99.6%;
+}
+
+.sectionHome img {
+    width: 100%;
+}
+
+.neonTextCW {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(255, 230, 0),
+        0 0 82px rgb(255, 230, 0),
+        0 0 92px rgb(255, 230, 0),
+        0 0 102px rgb(255, 230, 0),
+        0 0 151px rgb(255, 230, 0);
+}
+
+.neonText501 {
+    color: #fff;
+    text-shadow:
+        0 0 7px rgb(0, 132, 255),
+        0 0 10px rgb(0, 132, 255),
+        0 0 21px rgb(0, 132, 255),
+        0 0 42px rgb(0, 132, 255),
+        0 0 82px rgb(0, 132, 255),
+        0 0 92px rgb(0, 132, 255),
+        0 0 102px rgb(0, 132, 255),
+        0 0 151px rgb(0, 132, 255)
+}
+
+.neonText212 {
+    color: #fff;
+    text-shadow:
+        0 0 7px rgb(255, 230, 0),
+        0 0 10px rgb(255, 230, 0),
+        0 0 21px rgb(255, 230, 0),
+        0 0 42px rgb(255, 230, 0),
+        0 0 82px rgb(255, 230, 0),
+        0 0 92px rgb(255, 230, 0),
+        0 0 102px rgb(255, 230, 0),
+        0 0 151px rgb(255, 230, 0);
+}
+
+.neonText104 {
+    color: #fff;
+    text-shadow:   
+        0 0 7px rgb(255, 255, 255),
+        0 0 10px rgb(255, 255, 255),
+        0 0 21px rgb(255, 255, 255),
+        0 0 42px rgb(255, 255, 255),
+        0 0 82px rgb(255, 255, 255),
+        0 0 92px rgb(255, 255, 255),
+        0 0 102px rgb(255, 255, 255),
+        0 0 151px rgb(255, 255, 255);
+}
+
+.neonText65 {
+    color: #fff;
+    text-shadow:   
+        0 0 7px rgb(255, 0, 0),
+        0 0 10px rgb(255, 0, 0),
+        0 0 21px rgb(255, 0, 0),
+        0 0 42px rgb(255, 0, 0),
+        0 0 82px rgb(255, 0, 0),
+        0 0 92px rgb(255, 0, 0),
+        0 0 102px rgb(255, 0, 0),
+        0 0 151px rgb(255, 0, 0);
+}
+
+.neonText41 {
+    color: #fff;
+    text-shadow:   
+        0 0 7px rgb(0, 119, 16),
+        0 0 10px rgb(0, 119, 16),
+        0 0 21px rgb(0, 119, 16),
+        0 0 42px rgb(0, 119, 16),
+        0 0 82px rgb(0, 119, 16),
+        0 0 92px rgb(0, 119, 16),
+        0 0 102px rgb(0, 119, 16),
+        0 0 151px rgb(0, 119, 16);
+}
+
+.neonTextDelta {
+    color: #fff;
+    text-shadow:   
+        0 0 7px rgb(167, 114, 1),
+        0 0 10px rgb(167, 114, 1),
+        0 0 21px rgb(167, 114, 1),
+        0 0 42px rgb(167, 114, 1),
+        0 0 82px rgb(167, 114, 1),
+        0 0 92px rgb(167, 114, 1),
+        0 0 102px rgb(167, 114, 1),
+        0 0 151px rgb(167, 114, 1);
+}
+
+.neonTextReg{
+    color: #fff;
+    text-shadow:   
+        0 0 7px rgb(183, 0, 255),
+        0 0 10px rgb(183, 0, 255),
+        0 0 21px rgb(183, 0, 255),
+        0 0 42px rgb(183, 0, 255),
+        0 0 82px rgb(183, 0, 255),
+        0 0 92px rgb(183, 0, 255),
+        0 0 102px rgb(183, 0, 255),
+        0 0 151px rgb(183, 0, 255);
+}
+
+.neonText501 h2{
+    color:white
+}
+
+.neonText212 h2{
+    color: white;
+}
+
+.neonText104 h2{
+    color: rgb(0, 0, 0)
+}
+
+.neonText65 h2, .neonTextDelta h2, .neonTextReg h2 {
+    color: whitesmoke;
+}
+
+.neonText41 h2{
+    color: rgba(245, 245, 245, 0.774);
+}
+
+.neonTextBad h2{
+    color: rgba(245, 245, 245, 0.808);
+}
+
+/** Style footer **/
+
+.footer {
+    background:#000;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+}
+
+.footer .row {
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+}
+
+
+
+
+
+
+
+
+

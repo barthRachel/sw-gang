@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+}
+
+.sectiondelta img {
+    width: 100%;
+}
+
+.deltaVideo video {
+    width: 36.5%;
+}
+
+.sectiondelta h1 {
+    font-size: 3em;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    width: 99.6%;
+}
+
+.sectiondelta h2 {
+    font-size: 2em;
+    margin-top: 5%;
+    text-align: center;
+    position:absolute;
+    z-index: 1;
+    width: 99.6%;
+    color: orange
+}
+
+.sectiondelta p {
+    font-size: 1.5em;
+    margin-top: 15%;
+    text-align: center;
+    position:absolute;
+    z-index: 1;
+    width: 99.6%;
+}
