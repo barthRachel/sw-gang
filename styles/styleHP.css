@@ -10,60 +10,58 @@
     width: 30%;
 }
 
-.blocTricks {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.blocTricks { /* Style du bloc contenant le texte défilant */
+    width: 100%; /* largeur 100% du texte */
+    height: 100%; /* hauteur 100% du texte */
+    overflow: hidden; /* on cache le dépassement du texte */
 }
 
-.fade { /*Style de la div qui fait "disparaître" le texte*/
-    position: relative;
-    width: 100%;
-    min-height: 60vh;
-    top: -25px;
-    background-image: linear-gradient(0deg, transparent, black 75%);
-    z-index: 1;
+.fade { /* Style du bloc qui donne l'effet de disparition */
+    position: relative; /* va nous permettre de déplacer le bloc par rapport à sa position initiale (top : -25px) */
+    width: 100%; /* largeur 100% du texte */
+    min-height: 60vh; /* hauteur minimale du bloc fixé à 60vh ~= 60% du navigateur */
+    top: -25px; /* On déplace la boîte à -25px du bord */
+    background-image: linear-gradient(0deg, transparent, black 75%); /* On met un gradient en back-ground qui va de transparent (0%) à noir (75%) pour créer l'effet d'ombre */
+    z-index: 1; /* On place la boîte au dessus du texte pour avoir l'effet d'ombre à la disparition de celui-ci */
 }
   
-.star-wars { /*Style de la div qui contient le texte et du texte au complet*/
-    display: flex;
-    justify-content: center;
-    position: relative;
-    height: 200px;
-    color: #feda4a;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 500%;
-    font-weight: 600;
-    letter-spacing: 6px;
-    line-height: 150%;
-    perspective: 400px;
-    text-align: justify;
+.star-wars { /*Style de la section qui contient le bloc qui lui-même contient le texte */
+    display: flex; /* On définit le conteneur flex en block */
+    justify-content: center; /* On place les éléments au centre */
+    height: 200px; /* On fixe la hauteur du bloc à 200px */
+    color: #feda4a; /* On change la couleur du texte */
+    font-family: 'Pathway Gothic One', sans-serif; /* On change la police d'écriture du texte */
+    font-size: 500%; /* On augmente de 500% la taille du texte */
+    font-weight: 600; /* On gère la mise en gras du texte = 600 ~= "demi gras" */
+    letter-spacing: 6px; /* On met l'espacement entre les lettres à 6px */
+    line-height: 150%; /* On met l'espacement entre les lignes à 150% */
+    perspective: 400px; /* On gère la perspective du texte pour donné l'impression qu'il va dans le fond de l'écran */
+    text-align: justify; /* Le texte sera aligné à gauche et à droite */
 }
   
-.crawl {
-    position: relative;
-    top: 99999px;
-    transform-origin: 50% 100%;
+.crawl { /* Style de la div qui contient les textes */
+    position: relative; /* Va nous permettre de déplacer le bloc par rapport à sa position initiale */
+    transform-origin: 50% 100%; /* On change l'origine du bloc de 50% en haut et 100% à gauche par rapport à son origine de base */
     animation: crawl 60s linear; /*Appelle de l'animation crawl qui fait défiler le texte vers le haut => 1min pour tout défiler*/
 }
   
 .crawl > .title { /*Style du titre du texte*/
-    font-size: 90%;
-    text-align: center;
+    font-size: 90%; /* On grandit le titre de 90% par rapport à la taille donné au texte */
+    text-align: center; /* On aligne le texte au centre */
 }
   
-.crawl > .title h1 { /*Style du titre H1*/
-    margin: 0 0 100px;
+.crawl > .title h1 { /*Style du titre principal H1 - Style qui prend le dessus par rapport au style du titre */
+    margin: 0 0 100px; /* On met 100px de marges en dessous du titre h1 */
     text-transform: uppercase; /*Mise en majuscule du titre H1*/
 }
   
 @keyframes crawl { /*Animation qui fait défiler le texte vers le haut*/
-    0% {
-      top: -100px;
-      transform: rotateX(20deg)  translateZ(0);
-    }
-    100% { 
-      top: -6000px;
-      transform: rotateX(25deg) translateZ(-2500px);
+    0% { /* au début de l'animation */
+      top: -100px; /* On déplace le texte à 100px du haut de son conteneur */
+      transform: rotateX(20deg)  translateZ(0); /* transforme le texte pour donner l'impression de défilement vers le haut */
+    } 
+    100% { /* à la fin de l'animation */
+      top: -6000px; /* le texte sera à 6 000 px par rapport au dessus */
+      transform: rotateX(25deg) translateZ(-2500px); /* le texte sera transformée à 25 degré sur l'axe x et -2500 px sur l'axe y */
     }
 }
